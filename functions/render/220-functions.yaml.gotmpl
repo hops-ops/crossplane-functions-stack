@@ -4,9 +4,9 @@
 apiVersion: kubernetes.m.crossplane.io/v1alpha1
 kind: Object
 metadata:
-  name: function-{{ $key }}
+  name: function-{{ $fn.objectKey }}
   annotations:
-    {{ setResourceNameAnnotation (printf "function-%s" $key) }}
+    {{ setResourceNameAnnotation (printf "function-%s" $fn.objectKey) }}
   labels: {{ merge (dict "hops.ops.com.ai/function" $fn.name) $state.labels | toJson }}
 spec:
   managementPolicies: {{ $state.managementPolicies | toJson }}

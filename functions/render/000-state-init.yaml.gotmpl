@@ -73,7 +73,7 @@
     {{- end }}
     {{- $rc := $fn.runtimeConfig | default dict }}
     {{- $resolved = set $resolved $key (dict
-      "objectKey" $key
+      "objectKey" (kebabcase $key)
       "name" $derivedName
       "package" $pkg
       "version" $version

@@ -2,7 +2,7 @@
 {{- $raw := $.observed.resources | default dict }}
 {{- $obsFns := dict }}
 {{- range $key, $fn := $state.functions }}
-  {{- $entry := get $raw (printf "function-%s" $key) | default dict }}
+  {{- $entry := get $raw (printf "function-%s" $fn.objectKey) | default dict }}
   {{- $res := $entry.resource | default dict }}
   {{- $st := $res.status | default dict }}
   {{- $ready := false }}

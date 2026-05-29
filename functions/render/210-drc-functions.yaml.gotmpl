@@ -4,9 +4,9 @@
 apiVersion: kubernetes.m.crossplane.io/v1alpha1
 kind: Object
 metadata:
-  name: drc-{{ $key }}
+  name: drc-{{ $fn.objectKey }}
   annotations:
-    {{ setResourceNameAnnotation (printf "drc-%s" $key) }}
+    {{ setResourceNameAnnotation (printf "drc-%s" $fn.objectKey) }}
   labels: {{ merge (dict "hops.ops.com.ai/function" $fn.name) $state.labels | toJson }}
 spec:
   managementPolicies: {{ $state.managementPolicies | toJson }}

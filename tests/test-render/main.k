@@ -25,7 +25,7 @@ _items = [
                 {
                     apiVersion = "kubernetes.m.crossplane.io/v1alpha1"
                     kind = "Object"
-                    metadata.name = "drc-autoReady"
+                    metadata.name = "drc-auto-ready"
                     spec.forProvider.manifest = {
                         apiVersion = "pkg.crossplane.io/v1beta1"
                         kind = "DeploymentRuntimeConfig"
@@ -41,7 +41,7 @@ _items = [
                 {
                     apiVersion = "kubernetes.m.crossplane.io/v1alpha1"
                     kind = "Object"
-                    metadata.name = "function-autoReady"
+                    metadata.name = "function-auto-ready"
                     spec.forProvider.manifest = {
                         apiVersion = "pkg.crossplane.io/v1"
                         kind = "Function"
@@ -79,7 +79,7 @@ _items = [
                 {
                     apiVersion = "kubernetes.m.crossplane.io/v1alpha1"
                     kind = "Object"
-                    metadata.name = "drc-autoReady"
+                    metadata.name = "drc-auto-ready"
                     spec.forProvider.manifest.spec.deploymentTemplate.spec.template.spec = {
                         nodeSelector = {"workload-type" = "crossplane"}
                         tolerations = [
@@ -126,7 +126,7 @@ _items = [
                 {
                     apiVersion = "kubernetes.m.crossplane.io/v1alpha1"
                     kind = "Object"
-                    metadata.name = "function-patchAndTransform"
+                    metadata.name = "function-patch-and-transform"
                     spec.forProvider.manifest = {
                         apiVersion = "pkg.crossplane.io/v1"
                         kind = "Function"
@@ -140,7 +140,7 @@ _items = [
                 {
                     apiVersion = "kubernetes.m.crossplane.io/v1alpha1"
                     kind = "Object"
-                    metadata.name = "drc-patchAndTransform"
+                    metadata.name = "drc-patch-and-transform"
                     spec.forProvider.manifest = {
                         apiVersion = "pkg.crossplane.io/v1beta1"
                         kind = "DeploymentRuntimeConfig"
